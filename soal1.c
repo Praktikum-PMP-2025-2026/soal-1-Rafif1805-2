@@ -16,6 +16,13 @@ int main(void){
     gets(huruf);
     int i = 0;
     while (huruf[i] != 0){
+        if (huruf[0] == ')'){
+            int j = 1; 
+            while (huruf[j-1] != 0){
+                huruf[j-1] = huruf[j];
+                j++;
+            }            
+        }
         if (huruf[i] == '('){
             int m = i + 1;
             while (huruf[m] != 0){
@@ -42,7 +49,7 @@ int main(void){
                 }
             }
         }
-        else if(huruf[i] == ')'){
+        else if(huruf[i] == ')' && i != 0){
             int n = i - 1;
             while (n >= 0){
                 if (huruf[n] == ')'){
