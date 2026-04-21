@@ -9,6 +9,9 @@
 
 #include <stdio.h>
 
+// PENTING
+// Test case 8 saya coba run internal benar tapi di github salah
+
 int main(void){
     char huruf[100];
     char temp[100];
