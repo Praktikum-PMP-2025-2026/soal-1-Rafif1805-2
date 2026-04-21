@@ -44,7 +44,7 @@ int main(void){
         }
         else if(huruf[i] == ')'){
             int n = i - 1;
-            while (n <= 0){
+            while (n >= 0){
                 if (huruf[n] == ')'){
                     int j = i; 
                     while (huruf[j] != 0){
@@ -59,7 +59,7 @@ int main(void){
                 else if (huruf[n] != '('){
                     n--;
                 }
-                else if (n = 0){
+                if (n < 0){
                     int j = i; 
                     while (huruf[j] != 0){
                         huruf[j] = huruf[j+1];
