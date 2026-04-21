@@ -64,9 +64,10 @@ int main(void){
                     while (huruf[j] != 0){
                         huruf[j] = huruf[j+1];
                         j++;                    
+                    }
                 }
             }
-        }
+        }   
         temp[i] = huruf[i];
         i++;
     }
@@ -74,5 +75,4 @@ int main(void){
     printf("%s", temp);
     printf("\0");
     return 0;
-}
 }
