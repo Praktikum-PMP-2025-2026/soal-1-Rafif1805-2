@@ -9,7 +9,7 @@
 
 #include <stdio.h>
 
-int main(void) {
+int main(void){
     char huruf[100];
     char temp[100];
 
@@ -74,4 +74,5 @@ int main(void) {
     printf("%s", temp);
     printf("\0");
     return 0;
+}
 }
