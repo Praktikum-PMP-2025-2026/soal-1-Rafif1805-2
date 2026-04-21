@@ -11,16 +11,34 @@
 
 int main(void) {
     char huruf[100];
+    char temp[100];
 
     scanf("%s", huruf);
     int i = 0;
     while (huruf[i] != 0){
         if (huruf[i] == '('){
-            if (huruf[i+2] != ')'){
-                int j = i; 
-                while (huruf[j] != 0){
-                    huruf[j] = huruf[j+1];
-                    j++;
+            int m = i + 1;
+            while (huruf[m] != 0){
+                if (huruf[m] == '('){
+                    int j = i; 
+                    while (huruf[j] != 0){
+                        huruf[j] = huruf[j+1];
+                        j++;
+                    }
+                    break;                    
+                }
+                if (huruf[m] != ')'){
+                    m++;
+                }
+                else if (huruf[m] == ')'){
+                    break;
+                }
+                else if (huruf[m+1] == 0){
+                    int j = i; 
+                    while (huruf[j] != 0){
+                        huruf[j] = huruf[j+1];
+                        j++;
+                    }
                 }
             }
         }
@@ -33,10 +51,11 @@ int main(void) {
                 }
             }
         }
+        temp[i] = huruf[i];
         i++;
     }
     
-    printf("%s", huruf);
+    printf("%s", temp);
     printf("\0");
     return 0;
 }
