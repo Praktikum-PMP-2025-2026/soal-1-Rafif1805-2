@@ -27,11 +27,11 @@ int main(void) {
                     }
                     break;                    
                 }
-                if (huruf[m] != ')'){
-                    m++;
-                }
-                else if (huruf[m] == ')'){
+                if (huruf[m] == ')'){
                     break;
+                }
+                else if (huruf[m] != ')'){
+                    m++;
                 }
                 else if (huruf[m+1] == 0){
                     int j = i; 
@@ -43,11 +43,27 @@ int main(void) {
             }
         }
         else if(huruf[i] == ')'){
-            if (huruf[i-2] != '('){
-                int l = i;
-                while (huruf[l] != 0){
-                    huruf[l] = huruf[l+1];
-                    l++;
+            int n = i - 1;
+            while (n <= 0){
+                if (huruf[n] == ')'){
+                    int j = i; 
+                    while (huruf[j] != 0){
+                        huruf[j] = huruf[j+1];
+                        j++;
+                    }
+                    break; 
+                }
+                if (huruf[n] == '('){
+                    break;
+                }
+                else if (huruf[n] != '('){
+                    n--;
+                }
+                else if (n = 0){
+                    int j = i; 
+                    while (huruf[j] != 0){
+                        huruf[j] = huruf[j+1];
+                        j++;                    
                 }
             }
         }
