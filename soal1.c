@@ -13,7 +13,7 @@ int main(void){
     char huruf[100];
     char temp[100];
 
-    scanf("%s", huruf);
+    gets(huruf);
     int i = 0;
     while (huruf[i] != 0){
         if (huruf[i] == '('){
